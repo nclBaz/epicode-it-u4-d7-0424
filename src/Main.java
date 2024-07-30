@@ -132,6 +132,52 @@ public class Main {
 		System.out.println(userTreeSet);
 
 		// ******************************************************* MAP ************************************************
+		// Le Map sono strutture in cui ogni elemento è caratterizzato da una coppia <CHIAVE, VALORE>
+		HashMap<Integer, User> usersMap = new HashMap<>(); // Ad esempio qua sto dichiarando che ogni elemento della Map sarà rappresentato
+		// da una chiave di tipo numerico intero ed un valore di tipo User. Ad esempio potrei usarla per salvare e ricercare gli utenti in base al
+		// loro id. Ogni elemento sarà tipo
+		// 111111 - Aldo Baglio 20
+		// 222222 - Giovanni Storti 30
+
+		HashMap<String, String> dizionario = new HashMap<>(); // Qua sia chiave che valore sono String
+		// Ogni elemento sarà tipo:
+		// "Albero" - "Definizione della parola albero..blablabla"
+		// "Porta" - "Definizione della parola porta...."
+
+		System.out.println("-------------------------------------------- AGGIUNTA ELEMENTI ---------------------------------------------");
+		usersMap.put(111111, aldo);
+		usersMap.put(222222, giovanni);
+		usersMap.put(333333, giacomo);
+
+		System.out.println(usersMap);
+
+		dizionario.put("Albero", "Definizione della parola albero..blablabla");
+		dizionario.put("Porta", "Definizione della parola porta....");
+		// dizionario.put("Albero", "Bla bla bla"); <-- Non ci possono essere duplicati nelle chiavi, verrà effettuata una sovrascrittura
+
+		System.out.println(dizionario);
+
+
+		System.out.println("-------------------------------------------- LEGGERE ELEMENTI ---------------------------------------------");
+		System.out.println("La definizione di albero è: " + dizionario.get("Albero")); // La chiave serve per accedere agli elementi in lettura, scrittura, rimozione
+
+		System.out.println("-------------------------------------------- RIMPIAZZARE ELEMENTI ---------------------------------------------");
+		dizionario.replace("Albero", "Una definizione più aggiornata di albero");
+
+		System.out.println("-------------------------------------------- RIMUOVERE ELEMENTI ---------------------------------------------");
+		// dizionario.remove("Albero");
+
+		Set<String> chiaviDizionario = dizionario.keySet(); // Mi ritorna l'elenco di tutte le chiavi. E' un SET perché le chiavi non ammettono duplicati
+
+		for (String chiave : chiaviDizionario) {
+			System.out.println("Chiave: " + chiave);
+			System.out.println("Valore: " + dizionario.get(chiave));
+		}
+
+		Collection<String> valori = dizionario.values();
+
+		System.out.println(valori);
+
 
 	}
 }
