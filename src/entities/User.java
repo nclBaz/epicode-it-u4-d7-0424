@@ -2,7 +2,7 @@ package entities;
 
 import exceptions.StringNotValidException;
 
-public class User {
+public class User implements Comparable<User> {
 	private String name;
 	private String surname;
 	private int age;
@@ -48,5 +48,10 @@ public class User {
 				", surname='" + surname + '\'' +
 				", age='" + age + '\'' +
 				'}';
+	}
+
+	@Override
+	public int compareTo(User o) { // Metodo utilizzato nei TreeSet
+		return this.name.compareTo(o.name);
 	}
 }
